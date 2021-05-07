@@ -42,15 +42,16 @@ pip install -r requirements.txt
 ```
 python main.py https://devman.org/encyclopedia/python_basics/python_basics_intro/
 ```
-и пролучить ответ  
+и получить ответ  
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/NNMR8Ls/2.png" alt="2" border="0" /></a>  
-Для получения статистики перехода по ссылке, необходимо указать её в качестве 
+Для получения статистики переходов по ссылке, необходимо указать её в качестве 
 аргумента
 ```
 python main.py https://bit.ly/3tncHGJ
 ```
 пример ответа  
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/Q9SJpFc/image.png" alt="image" border="0"></a>
+
 ### Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков 

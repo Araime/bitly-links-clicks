@@ -4,8 +4,6 @@ import argparse
 from dotenv import load_dotenv
 from urllib.parse import urlparse
 
-load_dotenv()
-
 
 def shorten_link(link, base_url, headers):
     payload = {
@@ -52,15 +50,12 @@ if __name__ == '__main__':
     parsed_bitlink = f'{parsed.netloc}/{parsed.path}'
     bitlink_info = get_info(base_url, parsed_bitlink, headers)
 
-    if bitlink_info:
-        try:
+    try:
+        if bitlink_info:
             clicks_count = count_clicks(base_url, parsed_bitlink, headers)
             print(f'Всего кликов по ссылке: {clicks_count} раз(а)')
-        except requests.exceptions.HTTPError as error:
-            exit(f'Введена неправильная ссылка:\n{error}')
-    else:
-        try:
+        else:
             bitlink = shorten_link(link, base_url, headers)
             print(bitlink)
-        except requests.exceptions.HTTPError as error:
-            exit(f'Введена неправильная ссылка:\n{error}')
+    except requests.exceptions.HTTPError as error:
+        exit(f'Введена неправильная ссылка:\n{error}')
